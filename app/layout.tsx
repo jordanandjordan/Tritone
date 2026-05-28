@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { isFilled } from "@prismicio/client";
 import "./globals.css";
 
 import Header from "@/components/navigation/Header";
@@ -15,11 +16,15 @@ export async function generateMetadata(): Promise<Metadata> {
 
   const description = settings.data.meta_description || "";
 
-  const socialShareImageUrl =
-    settings.data.social_share_image?.url;
+  const socialShareImageUrl = isFilled.image(
+    settings.data.social_share_image
+  )
+    ? settings.data.social_share_image.url
+    : undefined;
 
-  const faviconUrl =
-    settings.data.favicon?.url;
+  const faviconUrl = isFilled.image(settings.data.favicon)
+    ? settings.data.favicon.url
+    : undefined;
 
   return {
     title,
@@ -32,9 +37,7 @@ export async function generateMetadata(): Promise<Metadata> {
     openGraph: {
       title,
       description,
-      images: socialShareImageUrl
-        ? [socialShareImageUrl]
-        : [],
+      images: socialShareImageUrl ? [socialShareImageUrl] : [],
     },
   };
 }
@@ -47,6 +50,16 @@ export default async function RootLayout({
   const client = createClient();
   const settings = await client.getSingle("site_settings");
 
+  const backgroundVideoUrl = isFilled.linkToMedia(
+    settings.data.background_video
+  )
+    ? settings.data.background_video.url
+    : "/tritone-background.mp4";
+
+  const logoUrl = isFilled.image(settings.data.logo)
+    ? settings.data.logo.url
+    : undefined;
+
   return (
     <html lang="en">
       <body className="relative overflow-x-hidden bg-black text-white">
@@ -58,13 +71,7 @@ export default async function RootLayout({
             playsInline
             className="h-full w-full object-cover opacity-70"
           >
-            <source
-              src={
-                settings.data.background_video?.url ||
-                "/tritone-background.mp4"
-              }
-              type="video/mp4"
-            />
+            <source src={backgroundVideoUrl} type="video/mp4" />
           </video>
 
           <div className="absolute inset-0 bg-black/45" />
@@ -72,7 +79,7 @@ export default async function RootLayout({
 
         <div className="relative z-10">
           <Header
-            logoUrl={settings.data.logo?.url}
+            logoUrl={logoUrl}
             contactEmail={settings.data.contact_email}
           />
           {children}
