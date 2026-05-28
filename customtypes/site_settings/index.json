@@ -1,0 +1,72 @@
+{
+  "format": "custom",
+  "id": "site_settings",
+  "label": "Site Settings",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "site_title": {
+        "type": "Text",
+        "config": {
+          "label": "Site Title",
+          "placeholder": ""
+        }
+      },
+      "meta_data_title": {
+        "type": "Text",
+        "config": {
+          "label": "Meta Data Title",
+          "placeholder": ""
+        }
+      },
+      "meta_description": {
+        "type": "Text",
+        "config": {
+          "label": "Meta Description",
+          "placeholder": ""
+        }
+      },
+      "social_share_image": {
+        "type": "Image",
+        "config": {
+          "label": "Social Share Image",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "contact_email": {
+        "type": "Text",
+        "config": {
+          "label": "Contact Email",
+          "placeholder": ""
+        }
+      },
+      "logo": {
+        "type": "Image",
+        "config": {
+          "label": "Logo",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "background_video": {
+        "type": "Link",
+        "config": {
+          "label": "Background Video",
+          "placeholder": "",
+          "select": "media",
+          "allowText": true
+        }
+      },
+      "favicon": {
+        "type": "Image",
+        "config": {
+          "label": "Favicon",
+          "constraint": {},
+          "thumbnails": []
+        }
+      }
+    }
+  }
+}

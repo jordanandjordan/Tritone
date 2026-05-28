@@ -1,0 +1,51 @@
+{
+  "format": "custom",
+  "id": "our_story",
+  "label": "Our Story",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "heading_one": {
+        "type": "Text",
+        "config": {
+          "label": "Heading One",
+          "placeholder": ""
+        }
+      },
+      "section_one": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Section One",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "image": {
+        "type": "Image",
+        "config": {
+          "label": "Image",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "heading_two": {
+        "type": "Text",
+        "config": {
+          "label": "Heading Two",
+          "placeholder": ""
+        }
+      },
+      "section_two": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Section Two",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      }
+    }
+  }
+}
