@@ -50,11 +50,15 @@ export default async function RootLayout({
   const client = createClient();
   const settings = await client.getSingle("site_settings");
 
-  const backgroundVideoUrl = isFilled.linkToMedia(
-    settings.data.background_video
-  )
-    ? settings.data.background_video.url
-    : "/tritone-background.mp4";
+  const rawBackgroundVideoUrl = isFilled.linkToMedia(
+  settings.data.background_video
+)
+  ? settings.data.background_video.url
+  : "/tritone-background.mp4";
+
+const backgroundVideoUrl = `${rawBackgroundVideoUrl}${
+  rawBackgroundVideoUrl.includes("?") ? "&" : "?"
+}v=${Date.now()}`;
 
   const logoUrl = isFilled.image(settings.data.logo)
     ? settings.data.logo.url

@@ -48,17 +48,17 @@ export default function Header({ logoUrl, contactEmail }: HeaderProps) {
           }}
         />
 
-        <div className="relative z-10 flex items-start justify-between px-[30px] py-[30px] md:px-[60px] md:py-[40px]">
+        <div className="relative z-10 flex items-center justify-between px-[30px] py-[30px] md:items-start md:px-[60px] md:py-[40px]">
           {/* Logo */}
           <Link href="/" onClick={closeMenu} className="relative z-50 block">
             <Image
-              src={logoUrl || "/tritone-logo.svg"}
+            src={logoUrl || "/tritone-logo.svg"}
               alt="Tritone"
               width={220}
               height={40}
               priority
-              className="h-5 w-auto md:h-auto md:w-[220px]"
-              style={{ height: "20px" }}
+              className="h-4 w-auto md:h-auto md:w-[220px]"
+              style={{ height: "16px"  }}
             />
           </Link>
 
@@ -128,7 +128,7 @@ export default function Header({ logoUrl, contactEmail }: HeaderProps) {
           <Link
             href="/our-story"
             onClick={closeMenu}
-            className="font-founders text-[56px] leading-[0.95] tracking-[-0.03em] text-white"
+            className="font-founders text-[40px] leading-[0.95] tracking-[-0.03em] text-white"
           >
             Our Story
           </Link>
@@ -136,7 +136,7 @@ export default function Header({ logoUrl, contactEmail }: HeaderProps) {
           <Link
             href="/services"
             onClick={closeMenu}
-            className="font-founders text-[56px] leading-[0.95] tracking-[-0.03em] text-white"
+            className="font-founders text-[40px] leading-[0.95] tracking-[-0.03em] text-white"
           >
             Services
           </Link>
@@ -144,7 +144,7 @@ export default function Header({ logoUrl, contactEmail }: HeaderProps) {
           <a
             href={`mailto:${email}`}
             onClick={closeMenu}
-            className="font-founders text-[56px] leading-[0.95] tracking-[-0.03em] text-white"
+            className="font-founders text-[40px] leading-[0.95] tracking-[-0.03em] text-white"
           >
             Contact
           </a>
