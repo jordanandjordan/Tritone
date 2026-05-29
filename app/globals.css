@@ -61,3 +61,7 @@ h5,
 h6 {
   letter-spacing: 0.05 !important;
 }
+
+p {
+  letter-spacing: 0 !important;
+}
