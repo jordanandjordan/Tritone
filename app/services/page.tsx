@@ -17,7 +17,14 @@ export default async function ServicesPage() {
         <Container>
           <Grid className="items-start gap-y-[56px]">
             <div className="col-span-2 md:sticky md:top-[150px] md:col-span-5 md:self-start">
-              <h1 className="font-founders text-[30px] leading-[1.18] tracking-[-0.02em] md:text-[42px] md:leading-[1.16]">
+              <h1
+                style={{
+                  fontSize: "42px",
+                  lineHeight: "1.16",
+                  letterSpacing: "-0.02em",
+                }}
+                className="font-founders"
+              >
                 {page.data.heading}
               </h1>
 
@@ -35,16 +42,67 @@ export default async function ServicesPage() {
                   field={page.data.body}
                   components={{
                     heading3: ({ children }) => (
-                      <h3 className="mb-[24px] font-founders text-[26px] leading-[1.1] tracking-[-0.02em] md:text-[32px]">
+                      <h3
+                        className="font-founders"
+                        style={{
+                          marginBottom: "24px",
+                          fontSize: "32px",
+                          lineHeight: "1.1",
+                          letterSpacing: "-0.02em",
+                          fontWeight: 400,
+                        }}
+                      >
                         {children}
                       </h3>
                     ),
-                    paragraph: ({ children }) => <p>{children}</p>,
+
+                    heading6: ({ children }) => (
+                      <div
+                        style={{
+                          marginTop: "72px",
+                          marginBottom: "72px",
+                          border: "2px solid white",
+                          padding: "30px 36px 36px",
+                          maxWidth: "720px",
+                        }}
+                      >
+                        <h6
+                          className="font-founders"
+                          style={{
+                            margin: 0,
+                            fontSize: "32px",
+                            lineHeight: "0.96",
+                            letterSpacing: "-0.03em",
+                            fontWeight: 400,
+                            color: "white",
+                          }}
+                        >
+                          {children}
+                        </h6>
+                      </div>
+                    ),
+
+                    paragraph: ({ children }) => (
+                      <p
+                        style={{
+                          margin: 0,
+                        }}
+                      >
+                        {children}
+                      </p>
+                    ),
+
                     list: ({ children }) => (
-                      <ul className="list-disc space-y-[10px] pl-[38px]">
+                      <ul
+                        style={{
+                          paddingLeft: "38px",
+                        }}
+                        className="list-disc space-y-[10px]"
+                      >
                         {children}
                       </ul>
                     ),
+
                     listItem: ({ children }) => <li>{children}</li>,
                   }}
                 />
