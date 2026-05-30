@@ -45,7 +45,7 @@ export default async function ServicesPage() {
                       <h3
                         className="font-founders"
                         style={{
-                          marginBottom: "24px",
+                          marginBottom: "16px",
                           fontSize: "32px",
                           lineHeight: "1.1",
                           letterSpacing: "-0.02em",
@@ -85,7 +85,8 @@ export default async function ServicesPage() {
                     paragraph: ({ children }) => (
                       <p
                         style={{
-                          margin: 0,
+                          marginTop: 0,
+                           marginBottom: "30px",
                         }}
                       >
                         {children}
