@@ -11,7 +11,7 @@ import { createClient } from "@/prismicio";
 
 const monoRichTextComponents = {
   paragraph: ({ children }: { children: ReactNode }) => (
-    <p className="mb-[22px] font-mono text-[12px] leading-[1.6] tracking-[0.08em] last:mb-0">
+    <p className="mb-[22px] font-mono tracking-[0.08em] last:mb-0">
       {children}
     </p>
   ),

@@ -37,7 +37,7 @@ export default async function ServicesPage() {
             </div>
 
             <div className="col-span-2 md:col-span-5 md:col-start-8">
-              <div className="space-y-[40px] pb-[50px] font-mono text-[10px] leading-[1.6] tracking-[0.08em] md:text-[12px] md:pb-[140px]">
+              <div className="space-y-[40px] pb-[50px] font-mono tracking-[0.08em] md:pb-[140px]">
                 <PrismicRichText
                   field={page.data.body}
                   components={{
@@ -86,7 +86,7 @@ export default async function ServicesPage() {
                       <p
                         style={{
                           marginTop: 0,
-                           marginBottom: "30px",
+                          marginBottom: "30px",
                         }}
                       >
                         {children}

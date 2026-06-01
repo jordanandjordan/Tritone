@@ -21,6 +21,8 @@
   --foreground: #ffffff;
   --font-founders: "Founders Grotesk", sans-serif;
   --font-mono: "GT America Mono", monospace;
+  --paragraph-font-size: 13px;
+  --paragraph-line-height: 1.8 !important;
 }
 
 * {
@@ -53,15 +55,26 @@ a {
   font-family: var(--font-mono);
 }
 
+/* Global heading reset. Keep this light so page-level heading styles can still work. */
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  letter-spacing: 0.05 !important;
+  margin: 0;
 }
 
+/* Global paragraph system. This is intentionally strong so Tailwind/text utilities do not override body copy. */
 p {
+  margin: 0;
+  font-size: var(--paragraph-font-size) !important;
+  line-height: var(--paragraph-line-height) !important;
   letter-spacing: 0 !important;
+}
+
+/* Keep Prismic list text aligned with paragraph sizing. */
+li {
+  font-size: var(--paragraph-font-size);
+  line-height: var(--paragraph-line-height);
 }
